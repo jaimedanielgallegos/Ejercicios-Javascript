@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola Mundo</h1>
+    <input type="number" class="first">
+    <input type="number" class="second">
+    <h4 class="text-async"></h4>
+    <script>
+       let first = document.querySelector(".first");
+       let second = document.querySelector(".second");
+
+       first.addEventListener("keyup",(e)=>{
+        let suma = parseInt(e.target.value)+parseInt(second.value);
+        if (!isNaN(suma)) document.querySelector(".text-async").innerHTML=suma;
+        else document.querySelector(".text-async").innerHTML="";
+       });
+       second.addEventListener("keyup",(e)=>{
+        let suma = parseInt(e.target.value)+parseInt(first.value);
+        if (!isNaN(suma)) document.querySelector(".text-async").innerHTML=suma;
+        else document.querySelector(".text-async").innerHTML="";
+       });
+    </script>
+</body>
+</html>
